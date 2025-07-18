@@ -102,7 +102,7 @@ productSchema.virtual("inStock").get(function () {
 });
 
 //Indexes for product collection.
-productSchema.index({ name: "text", description: "text", brand: "text" });
+productSchema.index({ name: "text", description: "text", brand: "text" }); //full-text-search => $text
 productSchema.index({ category: 1 });
 productSchema.index({ brand: 1 });
 productSchema.index({ price: 1 });
