@@ -105,7 +105,7 @@ const orderSchema = new mongoose.Schema(
         default: true,
       },
       method: String,
-      estimatedDelivery: true,
+      estimatedDelivery: Date,
     },
     tax: {
       type: Number,
@@ -161,4 +161,4 @@ orderSchema.methods.updateStatus = function (newStatus, note = "") {
   }
 };
 
-module.exports = mongoose.model("Order", cartSchema);
+module.exports = mongoose.model("Order", orderSchema);

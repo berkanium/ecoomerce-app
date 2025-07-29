@@ -92,7 +92,7 @@ productSchema.virtual("finalPrice").get(function () {
   return this.discountPrice || this.price;
 });
 
-productSchema.virtual(discountPercentage).get(function () {
+productSchema.virtual("discountPercentage").get(function () {
   if (!this.discountPrice) return 0;
   return Math.round(((this.price - this.discountPrice) / this.price) * 100);
 });
